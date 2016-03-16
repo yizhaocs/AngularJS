@@ -1,0 +1,56 @@
+﻿<style type="text/css">
+  .form-horizontal input.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+  }
+
+  .form-horizontal input.ng-valid.ng-dirty {
+    border-color: #78FA89;
+  }
+</style>
+<div class="view">
+    <div class="container">
+        <div class="row">
+        <header>
+            <h3>{{title}}</h3>
+        </header>
+        <div class="col-md-12">
+
+<form role="form" name="myForm" class="form-horizontal">
+<div class="row">
+<div class= "form-group" ng-class="{error: myForm.name.$invalid}">
+    <label class= "col-md-2"> Liveramp Segment Id </label>
+    <div class="col-md-4">
+    <input name="liveramp_segment_id" ng-model="mapping.liveramp_segment_id" type= "text" class= "form-control" placeholder="liveramp_segment_id" required/>
+    <span ng-show="myForm.liveramp_segment_id.$dirty && myForm.liveramp_segment_id.$invalid" class="help-inline">Liveramp Segment Id Required</span>
+    </div>
+</div>
+<div class= "form-group" ng-class="{error: myForm.name.$invalid}">
+    <label class= "col-md-2">  DP Key Id </label>
+    <div class="col-md-4">
+    <input name="dp_key_id" ng-model="mapping.dp_key_id" type= "text" class= "form-control" placeholder="dp_key_id" required/>
+    <span ng-show="myForm.dp_key_id.$dirty && myForm.dp_key_id.$invalid" class="help-inline">DP Key Id Required</span>
+    </div>
+</div>
+<div class= "form-group">
+    <label class= "col-md-2"> Value </label>
+    <div class="col-md-4">
+    <input name="value" ng-model="mapping.value" type= "text" class= "form-control" placeholder="value" required/>
+    <span ng-show="myForm.value.$dirty && myForm.value.$invalid" class="help-inline">Value Required</span>
+    </div>
+</div>
+<div class= "form-group">
+    <label class= "col-md-2"></label>
+    <div class="col-md-4">
+    <a href="#/liveramp" class="btn">Cancel</a>
+        <button ng-click="saveMapping(mapping);" 
+                ng-disabled="isClean() || myForm.$invalid"
+                class="btn btn-primary">{{buttonText}}</button>
+        <button ng-click="deleteMapping(mapping)"
+                ng-show="mapping._id" class="btn btn-warning">Delete</button>
+    </div>
+</div>
+</div>
+</form>
+        </div></div>
+    </div>
+</div>

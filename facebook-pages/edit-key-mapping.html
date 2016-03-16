@@ -1,0 +1,65 @@
+﻿<style type="text/css">
+  .form-horizontal input.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+  }
+
+  .form-horizontal input.ng-valid.ng-dirty {
+    border-color: #78FA89;
+  }
+</style>
+<div class="view">
+    <div class="container">
+        <div class="row">
+        <header>
+            <h3>{{title}}</h3>
+        </header>
+        <div class="col-md-12">
+
+<form role="form" name="myForm" class="form-horizontal">
+<div class="row">
+<div class= "form-group" ng-class="{error: myForm.key_id.$invalid}">
+    <label class= "col-md-2"> Key Id </label>
+    <div class="col-md-4">
+    <input name="key_id" ng-model="mapping.key_id" type= "text" class= "form-control" placeholder="key_id" required/>
+    <span ng-show="myForm.key_id.$dirty && myForm.key_id.$invalid" class="help-inline">Key Id Required</span>
+    </div>
+</div>
+<div class= "form-group" ng-class="{error: myForm.name.$invalid}">
+    <label class= "col-md-2">  Enabled </label>
+    <div class="col-md-4">
+    <input name="enabled" ng-model="mapping.enabled" type= "text" class= "form-control" placeholder="enabled" required/>
+    <span ng-show="myForm.enabled.$dirty && myForm.enabled.$invalid" class="help-inline">Enabled Required</span>
+    </div>
+</div>
+<div class= "form-group">
+    <label class= "col-md-2"> Update Interval </label>
+    <div class="col-md-4">
+    <input name="update_interval" ng-model="mapping.update_interval" type= "text" class= "form-control" placeholder="update_interval" />
+<!--
+    <span ng-show="myForm.update_interval.$dirty && myForm.update_interval.$invalid" class="help-inline">Updata Interval Required</span>
+-->
+    </div>
+</div>
+<div class= "form-group">
+    <label class= "col-md-2"> Use Image </label>
+    <div class="col-md-4">
+    <input name="use_image_pixel" ng-model="mapping.use_image_pixel" type= "text" class= "form-control" placeholder="use_image_pixel" required/>
+    <span ng-show="myForm.use_image_pixel.$dirty && myForm.use_image_pixel.$invalid" class="help-inline">Use Image Pixel Required</span>
+    </div>
+</div>
+<div class= "form-group">
+    <label class= "col-md-2"></label>
+    <div class="col-md-4">
+    <a href="#/facebook" class="btn">Cancel</a>
+        <button ng-click="saveMapping(mapping);" 
+                ng-disabled="isClean() || myForm.$invalid"
+                class="btn btn-primary">{{buttonText}}</button>
+        <button ng-click="deleteMapping(mapping)"
+                ng-show="mapping._id" class="btn btn-warning">Delete</button>
+    </div>
+</div>
+</div>
+</form>
+        </div></div>
+    </div>
+</div>

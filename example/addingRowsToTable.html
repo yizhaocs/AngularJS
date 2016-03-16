@@ -1,0 +1,28 @@
+<!-- http://codepen.io/calendee/pen/buCHf  -->
+<!DOCTYPE html>
+<html ng-app="MyApp">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+      <title>Add Rows</title>
+      <link href="http://cdn.foundation5.zurb.com/foundation.css" rel="stylesheet">
+   </head>
+   <body ng-controller="MainController">
+      <a href="#" class="button" ng-click="addRow()">Add Row {{counter}}</a>
+      <table>
+         <thead>
+            <tr>
+               <th width="200">Some Header</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr ng-repeat="rowContent in rows">
+               <td>{{rowContent}}</td>
+            </tr>
+         </tbody>
+      </table>
+      <script src="js/angular.min.js"></script>
+      <script src="js/angular-route.min.js"></script>
+      <script src="app/addingrowstotable.js"></script>
+   </body>
+</html>

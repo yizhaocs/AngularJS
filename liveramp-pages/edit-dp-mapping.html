@@ -1,0 +1,56 @@
+﻿<style type="text/css">
+  .form-horizontal input.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+  }
+
+  .form-horizontal input.ng-valid.ng-dirty {
+    border-color: #78FA89;
+  }
+</style>
+<div class="view">
+    <div class="container">
+        <div class="row">
+        <header>
+            <h3>{{title}}</h3>
+        </header>
+        <div class="col-md-12">
+
+<form role="form" name="myForm" class="form-horizontal">
+<div class="row">
+<div class= "form-group" ng-class="{error: myForm.dp_name.$invalid}">
+    <label class= "col-md-2"> DP Name </label>
+    <div class="col-md-4">
+    <input name="dp_name" ng-model="mapping.dp_name" type= "text" class= "form-control" placeholder="dp_name" required/>
+    <span ng-show="myForm.dp_name.$dirty && myForm.dp_name.$invalid" class="help-inline">DP Name Required</span>
+    </div>
+</div>
+<div class= "form-group" ng-class="{error: myForm.dp_id.$invalid}">
+    <label class= "col-md-2"> DP Id </label>
+    <div class="col-md-4">
+    <input name="dp_id" ng-model="mapping.dp_id" type= "text" class= "form-control" placeholder="dp_id" required/>
+    <span ng-show="myForm.dp_id.$dirty && myForm.dp_id.$invalid" class="help-inline">DP Id Required</span>
+    </div>
+</div>
+<div class= "form-group">
+    <label class= "col-md-2"> Threshold </label>
+    <div class="col-md-4">
+    <input name="threshold_mb" ng-model="mapping.threshold_mb" type= "text" class= "form-control" placeholder="threshold_mb" required/>
+    <span ng-show="myForm.threshold_mb.$dirty && myForm.threshold_mb.$invalid " class="help-inline">Threshold Required</span>
+    </div>
+</div>
+<div class= "form-group">
+    <label class= "col-md-2"></label>
+    <div class="col-md-4">
+    <a href="#/liveramp" class="btn">Cancel</a>
+        <button ng-click="saveMapping(mapping);" 
+                ng-disabled="isClean() || myForm.$invalid"
+                class="btn btn-primary">{{buttonText}}</button>
+        <button ng-click="deleteMapping(mapping)"
+                ng-show="mapping._id" class="btn btn-warning">Delete</button>
+    </div>
+</div>
+</div>
+</form>
+        </div></div>
+    </div>
+</div>

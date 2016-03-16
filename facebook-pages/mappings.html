@@ -1,0 +1,114 @@
+ <div class="row">
+
+    <nav class= "navbar navbar-default" role= "navigation" >
+    <div class="btn-group pull-right">
+      <button class="btn btn-primary" ng-click="scrollTo('fbdp')">FB DP</button>
+      <button class="btn btn-primary" ng-click="scrollTo('fbkey')">FB Key</button>
+    </div>
+    </nav>
+
+<!-- data_provider_facebook_pixels table -->
+    <div class="col-md-12" ng-show="mappingsPixel.length > 0">
+    <hr>
+    <span><b>data_provider_facebook_pixels</b></span><br><br>
+    <nav class= "navbar navbar-default" role= "navigation" >
+    <div class= "navbar-header" >
+    <a class="btn btn-lg btn-success" href="#/facebook/edit-pixel-mapping/0"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add new mapping</a>
+    </div>
+    </nav>
+        <table class="table table-striped table-bordered">
+        <thead>
+        <th>DP Id&nbsp;</th>
+        <th>Facebook Pixel Id&nbsp;</th>
+        <th>Action&nbsp;</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in mappingsPixel">
+                <td>{{data.dp_id}}</td>
+                <td>{{data.facebook_pixel_id}}</td>
+                <td><a href="#/facebook/edit-pixel-mapping/{{data.dp_id}}" class="btn">&nbsp;<i class="glyphicon glyphicon-edit"></i>&nbsp; Edit Mapping</a></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="col-md-12" ng-show="mappingsPixel.length == 0">
+        <div class="col-md-12">
+            <h4>No pixel mapping found</h4>
+        </div>
+    </div>
+
+<!-- data_providers table -->
+    <a id="fbdp"></a>
+    <div class="col-md-12" ng-show="mappingsDp.length > 0">
+    <hr>
+    <span><b>data_providers</b></span><br><br>
+    <nav class= "navbar navbar-default" role= "navigation" ng-show="true">
+    <div class= "navbar-header" >
+    <a class="btn btn-lg btn-default"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add new mapping</a>
+    </div>
+    <div class="navbar-header pull-right" role="navigation">
+      <a ng-click="scrollTo('fbtop')">Go To Top</a>
+    </div>
+    </nav>
+        <table class="table table-striped table-bordered">
+        <thead>
+        <th>DP Id&nbsp;</th>
+        <th>DP Name&nbsp;</th>
+        <th>Sync Facebook&nbsp;</th>
+        <th>Action&nbsp;</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in mappingsDp">
+                <td>{{data.id}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.sync_facebook}}</td>
+                <td><a href="#/facebook/edit-dp-mapping/{{data.id}}" class="btn">&nbsp;<i class="glyphicon glyphicon-edit"></i>&nbsp; Edit Mapping</a></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="col-md-12" ng-show="mappingsDp.length == 0">
+        <div class="col-md-12">
+            <h4>No dp mapping found</h4>
+        </div>
+    </div>
+
+<!-- facebook_dp_keys table -->
+    <a id="fbkey"></a>
+    <div class="col-md-12" ng-show="mappingsKey.length > 0">
+    <hr>
+    <span><b>facebook_dp_keys</b></span><br><br>
+    <nav class= "navbar navbar-default" role= "navigation" >
+    <div class= "navbar-header" >
+    <a class="btn btn-lg btn-success" href="#/facebook/edit-key-mapping/0"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add new mapping</a>
+    </div>
+    <div class="navbar-header pull-right" role="navigation">
+      <a ng-click="scrollTo('fbtop')">Go To Top</a>
+    </div>
+
+    </nav>
+        <table class="table table-striped table-bordered">
+        <thead>
+        <th>Key Id&nbsp;</th>
+        <th>Enabled&nbsp;</th>
+        <th>Interval&nbsp;</th>
+        <th>Use Image&nbsp;</th>
+        <th>Action&nbsp;</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in mappingsKey">
+                <td>{{data.key_id}}</td>
+                <td>{{data.enabled}}</td>
+                <td>{{data.update_interval}}</td>
+                <td>{{data.use_image_pixel}}</td>
+                <td><a href="#/facebook/edit-key-mapping/{{data.key_id}}" class="btn">&nbsp;<i class="glyphicon glyphicon-edit"></i>&nbsp; Edit Mapping</a></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="col-md-12" ng-show="mappingsKey.length == 0">
+        <div class="col-md-12">
+            <h4>No key mapping found</h4>
+        </div>
+    </div>
+</div>

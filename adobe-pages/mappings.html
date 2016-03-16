@@ -1,0 +1,30 @@
+ <div class="row">
+    <div class="col-md-12" ng-show="mappings.length > 0">
+    <hr>
+    <span><b>adobe_dpkey_mapping</b></span><br><br>
+    <nav class= "navbar navbar-default" role= "navigation" >
+    <div class= "navbar-header" >
+    <a class="btn btn-lg btn-success" href="#/adobe/edit-mapping/0"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add new mapping</a>
+    </div>
+    </nav>
+        <table class="table table-striped table-bordered">
+        <thead>
+        <th>Adobe Segment Id&nbsp;</th>
+        <th>Adara Key Id&nbsp;</th>
+        <th>Action&nbsp;</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in mappings">
+                <td>{{data.adobe_segment_id}}</td>
+                <td>{{data.dp_key_id}}</td>
+                <td><a href="#/adobe/edit-mapping/{{data.adobe_segment_id}}" class="btn">&nbsp;<i class="glyphicon glyphicon-edit"></i>&nbsp; Edit Mapping</a></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="col-md-12" ng-show="mappings.length == 0">
+        <div class="col-md-12">
+            <h4>No mapping found</h4>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿<style type="text/css">
+  .form-horizontal input.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+  }
+
+  .form-horizontal input.ng-valid.ng-dirty {
+    border-color: #78FA89;
+  }
+</style>
+<div class="view">
+    <div class="container">
+        <div class="row">
+        <header>
+            <h3>{{title}}</h3>
+        </header>
+        <div class="col-md-12">
+
+<form role="form" name="myForm" class="form-horizontal">
+<div class="row">
+<div class= "form-group" ng-class="{error: myForm.id.$invalid}">
+    <label class= "col-md-2"> DP Id </label>
+    <div class="col-md-4">
+    <input name="id" ng-disabled="true" ng-model="mapping.id" type= "text" class= "form-control" placeholder="id" required/>
+    <span ng-show="myForm.id.$dirty && myForm.id.$invalid" class="help-inline">DP Id Required</span>
+    </div>
+</div>
+<div class= "form-group" ng-class="{error: myForm.name.$invalid}">
+    <label class= "col-md-2"> Name </label>
+    <div class="col-md-4">
+    <input name="name" ng-disabled="true" ng-model="mapping.name" type= "text" class= "form-control" placeholder="name" required/>
+    <span ng-show="myForm.name.$dirty && myForm.name.$invalid" class="help-inline">DP Name Required</span>
+    </div>
+</div>
+<div class= "form-group">
+    <label class= "col-md-2"> Sync Facebook </label>
+    <div class="col-md-4">
+    <input name="sync_facebook" ng-model="mapping.sync_facebook" type= "text" class= "form-control" placeholder="sync_facebook" required/>
+    <span ng-show="myForm.sync_facebook.$dirty && myForm.sync_facebook.$invalid " class="help-inline">Sync Facebook Required</span>
+    </div>
+</div>
+<div class= "form-group">
+    <label class= "col-md-2"></label>
+    <div class="col-md-4">
+    <a href="#/facebook" class="btn">Cancel</a>
+        <button ng-click="saveMapping(mapping);" 
+                ng-disabled="isClean() || myForm.$invalid"
+                class="btn btn-primary">{{buttonText}}</button>
+    </div>
+</div>
+</div>
+</form>
+        </div></div>
+    </div>
+</div>

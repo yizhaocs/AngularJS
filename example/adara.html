@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>adara</title>
+   </head>
+   <body>
+      <html ng-app="adara" ng-app lang="en" ng-controller="adaraController">
+         <div >
+            <table>
+               <tr>
+                  <td>parse_rule: </td>
+                  <td>
+                     <select ng-model="parse_rule">
+                        <option value="orig">orig</option>
+                        <option value="split1">split1</option>
+                        <option value="split2">split2</option>
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+               </tr>
+               <tr>
+                  <table ng-show="parse_rule=='split1'">
+                     <td>split string: </td>
+                     <td>
+                        <input type="text" ng-model="split1.column1">
+                     </td>
+                  </table>
+                  <table ng-show="parse_rule=='split2'">
+                     <tr>
+                        <td>level 1 split string: </td>
+                        <td>
+                           <input type="text" ng-model="split2.column1">
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>level 2 split string: </td>
+                        <td>
+                           <input type="text" ng-model="split2.column2">
+                        </td>
+                     </tr>
+                  </table>
+               </tr>
+            </table>
+            <hr>
+            <table>
+               <tr>
+                  <td>condition_rule: </td>
+                  <td>
+                     <select ng-model="condition_rule">
+                        <option value="len">len</option>
+                        <option value="always">always</option>
+                        <option value="range">range</option>
+                        <option value="in">in</option>
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <table ng-show="condition_rule=='len'">
+                     <td>string length: </td>
+                     <td>
+                        <input type="text" ng-model="len.column1">
+                     </td>
+                  </table>
+                  <table ng-show="condition_rule=='range'">
+                     <tr>
+                        <td>range from: </td>
+                        <td>
+                           <input type="text" ng-model="range.column1">
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>range to: </td>
+                        <td>
+                           <input type="text" ng-model="range.column2">
+                        </td>
+                     </tr>
+                  </table>
+                  <table ng-show="condition_rule=='in'">
+                     <tr ng:repeat="element in inElementArray">
+                        <td>element_{{element.column1}}:</td>
+                        <td><input type="text" ng-model="element.column2"></td>
+                     </tr>
+                     <td>
+                     <td><button type="button" ng-click="addInElement()">+</button></td>
+                     <td><button type="button" ng-click="removeInElement()">-</button></td>
+                     </td>
+                  </table>
+               </tr>
+            </table>
+            <hr>
+            <table>
+               <tr>
+                  <td>action_rule: </td>
+                  <td>
+                     <select ng-model="action_rule">
+                        <option value="substr">substr</option>
+                        <option value="set">set</option>
+                        <option value="dec">dec</option>
+                        <option value="ignore">ignore</option>
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <div>
+                     <table ng-show="action_rule=='substr'">
+                        <tr>
+                           <td>direction: </td>
+                           <td>
+                              <input type="text" ng-model="substr.column1" >
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>start index: </td>
+                           <td>
+                              <input type="text" ng-model="substr.column2"  >
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>length: </td>
+                           <td>
+                              <input type="text" ng-model="substr.column3"  >
+                           </td>
+                        </tr>
+                     </table>
+                     <table ng-show="action_rule=='set'">
+                        <tr ng:repeat="rule in setRuleArray">
+                           <td>rule_{{rule.column1}}:</td>
+                           <td><input type="text" ng-model="rule.column2"></td>
+                        </tr>
+                        <td>
+                        <td><button type="button" ng-click="addSetRule()">+</button></td>
+                        <td><button type="button" ng-click="removeSetRule()">-</button></td>
+                        </td>
+                     </table>
+                     <table ng-show="action_rule=='dec'">
+                        <td>number of decimals: </td>
+                        <td>
+                           <input type="text" ng-model="dec.column1" >
+                        </td>
+                     </table>
+                  </div>
+               </tr>
+            </table>
+            <hr>
+            <table>
+               <div> <button type="button" ng-click="saveAll()">Save all</button></div>
+            </table>
+         </div>
+         <script src="js/angular.min.js"></script>
+         <script src="js/angular-route.min.js"></script>
+         <script src="app/adara.js"></script>
+      </html>
+   </body>
+</html>

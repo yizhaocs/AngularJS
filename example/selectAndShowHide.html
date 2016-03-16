@@ -1,0 +1,48 @@
+<!-- http://jsfiddle.net/EZbfM/ -->
+
+<!DOCTYPE html>
+<html ng-app="selectandshowhide" ng-app lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        ul>li,
+        a {
+            cursor: pointer;
+        }
+    </style>
+    <title>staticselect</title>
+</head>
+
+<body>
+
+    <div ng-controller="SelectAndShowHideController">
+    <select ng-model="myDropDown">
+          <option value="one">One</option>
+          <option value="two">Two</option>
+          <option value="three">Three</option>
+    </select>
+    
+    <div ng-show="myDropDown=='one'">
+        <input type="text">
+    </div>
+
+    <div ng-show="myDropDown=='two'">
+        <input type="text">
+        <input type="text">
+    </div>
+
+    <div ng-show="myDropDown=='three'">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+    </div>
+    </div>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="app/selectandshowhide.js"></script>
+</body>
+
+</html>

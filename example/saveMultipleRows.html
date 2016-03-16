@@ -1,0 +1,31 @@
+<!-- http://jsfiddle.net/2SgbU/2/ -->
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>adara</title>
+   </head>
+   <body>
+
+<div ng-app="application">
+    <div ng-controller="sample">
+        <table>
+            <tr ng-repeat="row in rows">
+                <td><input type="text" ng-model="row.column1"/></td>
+                <td><input type="text" ng-model="row.column2"/></td>
+                <td><input type="checkbox" ng-model="row.column3"/></td>
+            </tr>
+        </table>
+        <button type="button" ng-click="addRow()">Add row</button>
+        <button type="button" ng-click="saveAll()">Save all</button>
+    </div>
+</div>
+
+
+<script src="js/angular.min.js"></script>
+         <script src="js/angular-route.min.js"></script>
+         <script src="app/saveMultipleRows.js"></script>
+      </html>
+   </body>
+</html>

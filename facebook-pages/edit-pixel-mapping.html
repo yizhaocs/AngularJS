@@ -1,0 +1,49 @@
+﻿<style type="text/css">
+  .form-horizontal input.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+  }
+
+  .form-horizontal input.ng-valid.ng-dirty {
+    border-color: #78FA89;
+  }
+</style>
+<div class="view">
+    <div class="container">
+        <div class="row">
+        <header>
+            <h3>{{title}}</h3>
+        </header>
+        <div class="col-md-12">
+
+<form role="form" name="myForm" class="form-horizontal">
+<div class="row">
+<div class= "form-group" ng-class="{error: myForm.name.$invalid}">
+    <label class= "col-md-2"> Data Provider Id </label>
+    <div class="col-md-4">
+    <input name="dp_id" ng-model="mapping.dp_id" type= "text" class= "form-control" placeholder="dp_id" required/>
+    <span ng-show="myForm.dp_id.$dirty && myForm.dp_id.$invalid" class="help-inline">DP Id Required</span>
+    </div>
+</div>
+<div class= "form-group" ng-class="{error: myForm.name.$invalid}">
+    <label class= "col-md-2">  Facebook Pixel Id </label>
+    <div class="col-md-4">
+    <input name="facebook_pixel_id" ng-model="mapping.facebook_pixel_id" type= "text" class= "form-control" placeholder="facebook_pixel_id" required/>
+    <span ng-show="myForm.facebook_pixel_id.$dirty && myForm.facebook_pixel_id.$invalid" class="help-inline">Facebook Pixel Id Required</span>
+    </div>
+</div>
+<div class= "form-group">
+    <label class= "col-md-2"></label>
+    <div class="col-md-4">
+    <a href="#/facebook" class="btn">Cancel</a>
+        <button ng-click="saveMapping(mapping);" 
+                ng-disabled="isClean() || myForm.$invalid"
+                class="btn btn-primary">{{buttonText}}</button>
+        <button ng-click="deleteMapping(mapping)"
+                ng-show="mapping._id" class="btn btn-warning">Delete</button>
+    </div>
+</div>
+</div>
+</form>
+        </div></div>
+    </div>
+</div>
