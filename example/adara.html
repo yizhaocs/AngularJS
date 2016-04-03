@@ -9,6 +9,28 @@
          <div >
             <table>
                <tr>
+                  <td>key_id: </td>
+                  <td>
+                     <input type="text" ng-model="keyId">
+                  </td>
+               </tr>
+            </table>
+
+            <hr>
+
+            <table>
+               <tr>
+                  <td>type: </td>
+                  <td>
+                     <input type="text" ng-model="insertType">
+                  </td>
+               </tr>
+            </table>
+
+            <hr>
+
+            <table>
+               <tr>
                   <td>parse_rule: </td>
                   <td>
                      <select ng-model="parse_rule">
@@ -43,7 +65,9 @@
                   </table>
                </tr>
             </table>
+
             <hr>
+
             <table>
                <tr>
                   <td>condition_rule: </td>
@@ -89,7 +113,9 @@
                   </table>
                </tr>
             </table>
+
             <hr>
+
             <table>
                <tr>
                   <td>action_rule: </td>
@@ -143,7 +169,9 @@
                   </div>
                </tr>
             </table>
+
             <hr>
+
             <table>
                <div> <button type="button" ng-click="saveAll()">Save all</button></div>
             </table>

@@ -65,6 +65,10 @@ angular.module('adara', [])
         };
 
         $scope.saveAll = function() {
+            // key_id
+            var keyId = $scope.keyId;
+            // type
+            var type = $scope.insertType;
             // parse_rule
             var split1Column1 = $scope.split1.column1;
             var split2Column1 = $scope.split2.column1;
@@ -81,7 +85,10 @@ angular.module('adara', [])
 
             if($scope.debug){
                 console.log('saveAll');
-
+                // key_id
+                console.log('key_id:' + keyId);
+                //type
+                console.log('type:' + type);
                 // parse_rule
                 console.log('split1 column1:' + JSON.stringify(split1Column1));
                 console.log('split2 column1:' + JSON.stringify(split2Column1));
